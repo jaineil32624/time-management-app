@@ -1,52 +1,105 @@
 # Time Management App
 
-A small Android app for making time for study, work, exercise, walking, cooking,
-reading, hobbies, games, breaks, and activities you add yourself.
+**Make time for life.**
 
-The **Focus** tab has activity timers, daily tasks, music, and progress. When a
-timed session ends, confetti and points celebrate it; after a focus session, you
-can choose a five-minute tap-the-star game or start a five-minute break timer.
-The **Tools** tab has a stopwatch, a one-time alarm reminder, and a clock that
-uses the time zone configured on the device.
+Time Management App is an Android app for people who want a little help making
+time for the things that matter. Set a timer for studying, work, exercise,
+walking, cooking, reading, hobbies, games, or your own custom activity. Keep a
+short task list, track daily progress, and take breaks when you need them.
 
-Copyright © 2026 Jaineil Rana.
+Made by **Jaineil Rana** · © 2026 Jaineil Rana
 
-Source code: [GitHub](https://github.com/jaineil32624/time-management-app).
+## Screenshots
 
-The included soft-focus ambient loop is original sound generated for this app;
-it does not use third-party music. SomaFM internet radio is streamed from
-[SomaFM](https://somafm.com/listen/) and the broadcast tracks remain the
-property of their artists and labels. Spotify and YouTube Music buttons open
-activity-matched searches in those services; they do not copy or rehost songs.
-Music selected from your device remains the property of its respective
-copyright holder.
+| Focus timer and daily plan | Activity timer and music |
+| --- | --- |
+| ![Time Management App home screen showing the study timer and activity list](app-preview-settings.png) | ![Time Management App showing an activity timer, music controls, and daily plan](app-preview.png) |
 
-## Run it
+## What you can do
 
-Open this folder in Android Studio and let it sync Gradle. Choose an emulator or
-Android phone, then press **Run**. You can also build the debug APK on Windows
-with `.\gradlew.bat assembleDebug`.
+### Focus
 
-The alarm asks for notification permission the first time you set it. It rings
-using the phone's alarm volume until you stop it; check that volume and the
-device's alarm sound settings if it is too quiet. Android can delay reminders
-when battery saving is enabled, and exact timing depends on the device's alarm
-settings.
+- Start, pause, reset, and customize timers for a variety of activities.
+- Begin with a 30-minute study session, or make your own activity and duration.
+- Add daily tasks with time goals and earn points for completing sessions and
+  tasks.
+- See the minutes you have tracked toward the app's four-hour daily goal.
+- Choose the original built-in ambient loop, music on your device, or SomaFM
+  internet radio.
+- Open activity-matched music searches in Spotify or YouTube Music.
+- Celebrate a finished focus session with confetti, then choose a five-minute
+  tap-the-star game or a five-minute break timer.
 
-## Prepare a Play Store release
+### Tools
 
-The app bundle can be built with `.\gradlew.bat bundleRelease`. Before publishing:
+- Check the date, time, and time zone set on your device.
+- Use a stopwatch with start, pause, and reset controls.
+- Set a one-time reminder alarm and stop it from the alarm screen or its
+  notification.
 
-1. Choose a globally unique application ID in `app/build.gradle.kts`.
-2. Create and safely back up your own Play upload key. Do not commit the key or
-   its passwords to the project.
-3. Set these environment variables in your local build session:
-   `ANDROID_UPLOAD_STORE_FILE`, `ANDROID_UPLOAD_STORE_PASSWORD`,
-   `ANDROID_UPLOAD_KEY_ALIAS`, and `ANDROID_UPLOAD_KEY_PASSWORD`.
-4. Run `.\gradlew.bat bundleRelease` again. The signed bundle is written to
-   `app/build/outputs/bundle/release/app-release.aab`.
-5. Complete the Play Console listing, content rating, data-safety form, and
-   testing requirements before submitting the app.
+## Run the app
 
-If the upload-key environment variables are not set, Gradle builds an unsigned
-bundle for local testing; Google Play will not accept that bundle for upload.
+### Android Studio
+
+1. Clone or download this repository.
+2. Open the project folder in Android Studio and allow Gradle to sync.
+3. Choose an Android emulator or connect an Android phone.
+4. Select the `app` run configuration and press **Run**.
+
+### Build an APK on Windows
+
+From the project folder in PowerShell:
+
+```powershell
+.\gradlew.bat assembleDebug
+```
+
+The installable debug APK is created at
+`app/build/outputs/apk/debug/app-debug.apk`.
+
+## Alarm and notifications
+
+The alarm uses the alarm sound and alarm-volume setting configured on the
+device. It keeps ringing until stopped. Allow notifications when Android asks;
+you can also check the device's alarm volume and sound settings if you cannot
+hear it. Android battery settings and device policies may delay alarms.
+
+The clock uses the device's configured time zone; the app does not need your
+location to display local time.
+
+## Music and attribution
+
+The bundled soft-focus ambient loop was made for this app and does not use
+third-party music. SomaFM streams and broadcast tracks remain the property of
+their respective artists and labels. Music picked from the device remains the
+property of its copyright holder. Spotify and YouTube Music buttons open
+activity-matched searches; they do not link accounts, control playback inside
+the app, or copy and rehost songs. Internet radio uses mobile data when not on
+Wi-Fi.
+
+## Build a release bundle
+
+To build an Android App Bundle:
+
+```powershell
+.\gradlew.bat bundleRelease
+```
+
+The bundle is written to `app/build/outputs/bundle/release/app-release.aab`.
+Before publishing, set a globally unique application ID in
+`app/build.gradle.kts`, create and protect your own Play upload key, and
+configure `ANDROID_UPLOAD_STORE_FILE`, `ANDROID_UPLOAD_STORE_PASSWORD`,
+`ANDROID_UPLOAD_KEY_ALIAS`, and `ANDROID_UPLOAD_KEY_PASSWORD` in your local
+build environment. Do not commit your key or passwords. Without these values,
+the generated release bundle is unsigned and cannot be uploaded to Google Play.
+Follow the store's current testing and submission requirements.
+
+## Project details
+
+- **Platform:** Android
+- **Language:** Kotlin
+- **UI:** Jetpack Compose and Material 3
+- **Minimum Android version:** Android 6.0 (API 23)
+- **Application ID:** `com.timemanagementapp`
+
+Source code: [jaineil32624/time-management-app on GitHub](https://github.com/jaineil32624/time-management-app).
