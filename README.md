@@ -2,6 +2,16 @@
 
 **Make time for life.**
 
+[![Download for Android](https://img.shields.io/badge/Download%20for-Android-2ea44f?style=for-the-badge&logo=android&logoColor=white)](https://github.com/jaineil32624/time-management-app/releases/download/v1.0.0/app-debug.apk)
+
+**To install:** Open this page on your Android phone, tap **Download for
+Android**, open the downloaded file, and tap **Install**. If Android asks,
+allow your browser to install apps, then return to the installer. Once
+installed, open **Time Management App** from your phone's apps.
+
+> Android only. This is a test build, not a Play Store app. GitHub cannot run
+> the app in a browser; installation on your Android phone is required.
+
 Time Management App is an Android app for people who want a little help making
 time for the things that matter. Set a timer for studying, work, exercise,
 walking, cooking, reading, hobbies, games, or your own custom activity. Keep a
@@ -38,6 +48,14 @@ Made by **Jaineil Rana** · © 2026 Jaineil Rana
   notification.
 
 ## Run the app
+
+### Quick launch on Windows
+
+Double-click `start-app.bat` in the project folder. It builds the debug APK if
+needed, starts the configured Android emulator, installs the app, and opens it.
+The first run may take a few minutes. Android Studio, the Android SDK, and an
+emulator named `Medium_Phone_API_37.0` are required. To use a different
+emulator, change the `AVD` value near the top of `start-app.bat`.
 
 ### Android Studio
 
